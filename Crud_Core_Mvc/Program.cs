@@ -1,14 +1,24 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Crud_Core_Mvc.Data;
-using System.Configuration;
+using Crud_Core_Mvc.Services;
+
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Crud_Core_MvcContext>(options => options.UseMySQL("server=localhost;database=Crud1;user=root;password=Dalurabk@24"));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
+
+
+SeedingService seedingService = new SeedingService();
+seedingService.seed();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

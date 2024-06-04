@@ -17,7 +17,7 @@ namespace Crud_Core_Mvc.Models
 
         public Seller() { }
 
-        public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department, ICollection<SalesRecord> sales)
+        public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
         {
             Id = id;
             Name = name;
@@ -25,7 +25,6 @@ namespace Crud_Core_Mvc.Models
             BirthDate = birthDate;
             BaseSalary = baseSalary;
             Department = department;
-            Sales = sales;
         }
 
         public void AddSales(SalesRecord sr)

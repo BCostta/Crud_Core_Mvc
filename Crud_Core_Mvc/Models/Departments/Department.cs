@@ -1,6 +1,10 @@
+
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 namespace Crud_Core_Mvc.Models.Departments
+
+
+
 {
     public class Department
     {
@@ -27,7 +31,5 @@ namespace Crud_Core_Mvc.Models.Departments
         {
             return Sellers.Sum(saller => saller.TotalSales(initial, final));
         }
-
-
     }
 }
