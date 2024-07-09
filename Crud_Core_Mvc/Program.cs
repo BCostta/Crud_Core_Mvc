@@ -14,8 +14,8 @@ builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
 
 
-SeedingService seedingService = new SeedingService();
-seedingService.seed();
+//SeedingService seedingService = new SeedingService();
+//seedingService.seed();
 
 var app = builder.Build();
 
