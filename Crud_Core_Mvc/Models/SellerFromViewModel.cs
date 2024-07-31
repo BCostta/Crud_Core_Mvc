@@ -6,8 +6,8 @@ namespace Crud_Core_Mvc.Models
     public class SellerFromViewModel
     {
 
-        public Seller seller { get; set; }
-        public ICollection<Department> departments { get; set; } = new List<Department>();
+        public Seller Seller { get; set; }
+        public ICollection<Department> Departments { get; set; } = new List<Department>();
 
     }
 }
