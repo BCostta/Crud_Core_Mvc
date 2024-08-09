@@ -1,5 +1,6 @@
 ﻿using Crud_Core_Mvc.Data;
 using Crud_Core_Mvc.Models.Departments;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Crud_Core_Mvc.Services
@@ -14,11 +15,10 @@ namespace Crud_Core_Mvc.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>>FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
-
-
+        
     }
 }
